@@ -1,0 +1,13 @@
+//EJERCICIOS CON FECHAS
+//Visualiza la fecha de hoy.
+let hoy = new Date();
+alert(hoy);
+//¿Cuantos milisegundos han transcurrido desde principios de 1970?
+let fechaVieja = new Date(1970,01,01);
+//¿Y años?
+
+//Suma un año a la fecha.
+
+//A partir de una fecha de nacimiento cualquiera, calcula la edad.
+
+//¿Cuantos días faltan para Navidad?

@@ -1,0 +1,20 @@
+//EJERCICIOS CON STRING:
+//Crea una variable de tipo string e inicializala con el valor Hola.
+let palabra ="Hola";
+//Muestra el contenido de la variable en mayúsculas.
+alert(palabra.toUpperCase());
+//Muestra el carácter de la posición 2.
+alert(palabra.charAt(2));
+//Muestra el carácter de la posición 4.
+alert(palabra.charAt(4));
+//¿Se encuentra la letra j en la cadena?
+
+//¿En que posición está la letra o?
+
+//¿Cuántas letras contiene?
+alert(palabra.length)
+//Crea otra variable de tipo string con el contenido de la anterior más la cadena buenos días.
+let palabra2 = new String("buenos días");
+let frase =(palabra + palabra2);
+//Quedate con los caracteres que van de la posición 3 a la 6.
+frase.charAt(3,6);

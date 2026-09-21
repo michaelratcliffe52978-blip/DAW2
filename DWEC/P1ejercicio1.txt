@@ -1,0 +1,16 @@
+//Crea una variable numerica denominada n1 e inicializa con el valor 16
+var n1=16;
+//Cambia el contenido por 16.678
+n1=16.678;
+//Quedate con la parte entera
+var entera=Math.trunc(n1);
+//Quedate con la parte decimal.
+var decimal=n1 % 1;
+//Redondea hacía arriba.
+var redondeoArriba = Math.ceil(n1);
+//Redondea hacía abajo.
+var redondeoArriba = Math.floor(n1);
+//Redondea.
+var redondea=Math.round(n1);
+//Quedate con dos decimales.
+var dosDecimales = n1.toFixed(2);

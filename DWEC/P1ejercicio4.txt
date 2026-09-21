@@ -1,0 +1,30 @@
+//salida de datos
+alert('Hola ');
+console.log('Hola mundo');
+document.write('Hola mundo');
+
+let nombre,edad,incremento,nuevaEdad;
+//entrada
+nombre = prompt("Teclea el nombre");
+edad = prompt("Tecle la edad",0);
+edad = parseInt(edad);
+incremento = parseInt(prompt("Teclea el incremento"));
+
+//proceso
+nuevaEdad = edad + incremento;
+
+//salida
+alert(nombre + " tendrá "+ nuevaEdad + "dentro de " + incremento);
+
+//declaracion y llenado
+var cadena1 = prompt("Teclea la primera cadena", "cadena uno");
+var cadena2 = prompt("Teclea la segunda cadena", "cadena dos");
+
+//salida
+alert (cadena1 + cadena2);
+alert (cadena1.concat(cadena2));
+
+let n1 = parseInt(prompt("El resultado de la suma es: "+ (n1+n2)))
+
+let cuadrado = Math.pow(nro,2);
+let cubo= Math.pow(nro,3);

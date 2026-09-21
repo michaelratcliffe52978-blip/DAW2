@@ -1,0 +1,71 @@
+/*Realiza un script que pida cadenas de texto hasta que se pulse cancelar.
+Al terminar se deben mostrar todas las cadenas concatenadas con un guión - . */
+let resultado = "";
+    do{
+        let cadena = prompt ("Introduzca una cadena");
+
+        if (cadena === null) {
+            break;
+        }
+
+        if(resultado === "" ){
+            resultado = cadena;
+        }else{
+            resultado = resultado + " - " + cadena
+        }
+        
+    }while(true);
+
+alert(resultado);
+
+/*Realiza un script que pida números hasta que se pulse cancelar. Si 
+no es un número deberá indicarse con un alert y seguir pidiendo.
+Al salir con cancelar se debera indicar la suma total de los números introducidos.*/
+let sumaTotal = 0;
+
+do{
+    let numero = prompt("Introduzca un número:");
+
+    if (numero === null) {
+        break;
+    }
+
+    numero = Number(numero);
+    
+    sumaTotal = sumaTotal + numero;
+
+}while(true);
+
+alert(sumaTotal);
+
+/*Realiza un script que escriba una piramide del 1 al 9 de la siguiente forma :
+1
+22
+333
+4444
+55555
+666666 */
+for (let i =0; i<9; i++){
+    alert(i);
+    for (let i =0; i<9; i++){
+        alert(i++);
+    }
+}
+
+
+/*Un script que escriba los numeros del 1 al 50, que indique cuales son
+multiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal.
+1
+2
+3
+4 (Multiplo de 4)
+5
+———————–
+6
+7
+8 (Multiplo de 4)
+9 (Multiplo de 9)
+10   */
+
+/*Crear un script que calcule el factorial de un número entero.
+5! = 5 x 4 x 3 x 2 x 1 = 120   */

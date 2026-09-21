@@ -1,0 +1,91 @@
+//Calcula si un numero es par o impar.
+let n=6;
+if(n%2==0){
+    alert(n +" es par.");
+}else{
+    alert(n + " es impar");
+}
+
+//Escribe un programa que pida 3 numeros y escriba en la pantalla el mayor de los tres.
+let n1 = prompt("Teclea el numero 1");
+let n2 = prompt("Teclea el numero 2");
+let n3 = prompt("Teclea el numero 3");
+
+if (n1>n2 && n1>n3){
+    alert("El numero más alto es n1:" + n1);
+}else if (n2>n1 && n2 > n3){
+    alert("El numero más alto es n2:" + n2);
+}else{
+    alert("El numero más alto es n3:" + n3);
+}
+
+//Escribe un programa que pida un caracter y diga si es una vocal o no.
+let caracter = prompt("Introduzca un caracter").toLowerCase();
+
+if(caracter.length ===1 && "áéíóúaeiou".includes(caracter)){
+    alert(caracter+" es una vocal");
+}else{
+    alert(caracter +" NO es una vocal");
+}
+
+/*Pide una nota (numero) y muestra la calificación según la nota:
+  0-3: Muy deficiente (el tres no incluido)
+  3-5: Insuficiente
+  5-6: Suficiente
+  6-7: Bien
+  7-9: Notable
+  9-10: Sobresaliente */
+let nota = prompt("Introduzca la nota:")
+
+if(nota>= 0 && nota <3){
+    alert("Muy deficiente");
+}else if(nota>=3 && nota<5){
+    alert("Insuficiente");
+}else if(nota>=5 && nota<6){
+    alert("Suficiente");
+}else if(nota>=6 && nota<7){
+    alert("Bien");
+}else if(nota>=7 && nota<9){
+    alert("Notable");
+}else if(nota>=9 && nota<=10){
+    
+}else{
+    alert("Nota no valida");
+}
+
+//Reescribe el siguiente if:
+/*
+if (login == "Empleado")
+{
+    message = "Hola";
+}else
+    if (login == "Director")
+    {
+        message ="Felicidades";
+    }
+    else
+       if (login == "")
+        {
+        message = "Sin sesión";  
+     }
+     else
+     {
+        message =""?;
+     ]
+*/
+let message;
+
+if (login == "Empleado")
+{
+    message = "Hola";
+}else if (login == "Director")
+    {
+        message ="Felicidades";
+    }
+    else if (login == ""){
+        message = "Sin sesión";  
+     }
+     else
+     {
+        message ="";
+     }
