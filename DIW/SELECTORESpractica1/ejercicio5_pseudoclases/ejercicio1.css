@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section {
+    background-color: #DFDFDF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+    gap: 1em;
+}
+.types{
+    display:flex;
+    justify-content: space-around;
+}
+section li {
+    list-style: none;
+}
+
+section h1{
+    color: #4682B4;
+    border-bottom: 1px solid white;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.UI{
+    padding-bottom: 2rem;
+    width: 60%;
+}
+
+form {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: .5rem;
+    width: 50%;
+    margin: 0 auto;
+}
+
+form input[type="text"], form input[type="email"], form textarea{
+    border: 2px solid steelblue;
+    width: 100%;
+    margin-bottom: .3rem;
+}
+form input[type="submit"]{
+    background-color: steelblue;
+    padding: 1em 2em;
+    border:2px solid white;
+    color: white;
+}
+
+/*PARTE 3 DEL EJERCICIO*/
+.nth-of-type div, .nth-of-type li{
+    padding: 2px;
+    margin: 6px;
+    border: 1px solid black;
+}
+.nth-of-type div:nth-of-type(2n+1){   /*DIV IMPARES*/
+    background-color: orange;
+    color:white;
+    font-size: 2em;
+}
+.nth-of-type li:nth-of-type(2n+1){   /*LI IMPARES*/
+    background-color: blue;
+    color:white;
+    font-size: 2em;
+}
+strong{
+    color: red;
+    font-size: 2rem;
+}
+
+/*PARTE 4 DEL EJERCICIO*/
+.nth-child li{
+    padding: 2px;
+    margin: 6px;
+}
+
+.nth-child li:nth-child(2n){
+    background-color: red;
+    color:white;
+
+}
+.nth-child li:nth-child(2n+1){
+    background-color: green;
+    color:white;
+}
+
+
+/*PARTE 5 DEL EJERCICIO*/
+form :disabled{ /*el espacio es super importante*/
+    background-color: #666;
+    cursor:no-drop;
+}
+
+form input[type="email"]:enabled{
+    background-color: yellow;
+    color: green;
+}
+
+form input[type="radio"]:checked + label{
+    font-weight: bold;
+    color: white;
+    border: 1px solid steelblue;
+}
+/*Los labels de los radiobuttons azules*/
+form input[type="radio"] + label{
+    color: steelblue;
+}
+form input[type="submit"]:hover{
+    color: steelblue;
+    background-color: white;
+    border-color: steelblue;
+}
