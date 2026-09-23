@@ -23,7 +23,7 @@
             <select id="tipo" name="type" size="1">
                 <option value="" disabled selected>--Selecciona--</option>
                 <option value="celsius">Celsius</option>
-                <option value="farenheit">Farenheit</option>
+                <option value="fahrenheit">Farenheit</option>
             </select>
         </p>
         <p>

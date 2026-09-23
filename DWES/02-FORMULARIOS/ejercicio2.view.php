@@ -9,7 +9,7 @@
 
     <form action="ejercicio2.php" method="GET">
         <p>
-            <label for="lastresult">Último resultado: </label>
+            <label for="lastresult">Último resultado: <?= $resultado ?? "" ?></label>
         </p>
         <p>
             <label for="num1">Primer número: </label>
