@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    width: 80%;
+    margin: 0 auto;
+    background-color:rgb(221, 221, 221);
+    padding: 1rem;
+}
+
+h1{
+    color: steelblue;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+
+p{
+    padding: 0.5rem;
+}
+
+p::first-line{
+    color: orangered;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+}
+.parrafo::first-letter{
+    background: white;
+    color: red;
+    float: left;
+    font-size: 3rem;
+    font-family: arial;
+    padding: 0.5rem;
+    margin: .5rem .1rem;
+}

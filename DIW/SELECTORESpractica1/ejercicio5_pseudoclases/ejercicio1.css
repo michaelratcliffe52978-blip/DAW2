@@ -107,10 +107,12 @@ form input[type="radio"]:checked + label{
     color: white;
     border: 1px solid steelblue;
 }
+
 /*Los labels de los radiobuttons azules*/
 form input[type="radio"] + label{
     color: steelblue;
 }
+
 form input[type="submit"]:hover{
     color: steelblue;
     background-color: white;
