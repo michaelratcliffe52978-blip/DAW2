@@ -86,3 +86,13 @@ function salir() {
     document.getElementById("nombre").value = "";
     document.getElementById("password").value = "";
 }
+
+/*CORRECCION DE LA PROFE
+function validarUsurio(username){
+    cosnt regexUsername = /^()$/;
+
+    if(!regexUsername.test(username)){
+        ....
+    }
+    throw new Error("La contraseña")
+}*/

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF -8">
+    <title>Ejemplo uno </title>
+</head>
+    <body>
+        <form>
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="" size="25">
+            </p>
+            <p>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" value="" size="40">
+            </p>
+            <p>
+                <label for="email">Correo electrónico: </label>
+                <input type="email" id="email" name="email" value="@" size="45" >
+            </p>
+            <p>
+                <label for="poblacion">Población:</label>
+                <input type="text" id="poblacion" name="poblacion" value="" size="25">
+            </p>
+            <p>
+                <label for="provincia">Provincia:</label>
+                <input type="text" id="provincia" name="provincia" value="" size="25">
+            </p>
+            <p>Edad:<br>
+                <input type="radio" name="edad" value="0-20" id="ceroVeinte" checked>
+                <label for="ceroVeinte">0-20</label><br>
+                
+                <input type="radio" name="edad" value="20-40" id="veinteCuarenta">
+                <label for="veinteCuarenta">20-40</label><br>
+
+                <input type="radio" name="edad" value="40-60" id="cuarentaSesenta">
+                <label for="cuarentaSesenta">40-60</label><br>
+
+                <input type="radio" name="edad" value="60-100" id="sesentaCien">
+                <label for="sesentaCien">60-100</label><br>
+
+            </p>
+            <p>¿Cómo nos has conocido?<br>
+                <label for="amigo">
+                <input type="checkbox" id="amigo" name="notificaciones" value="aceptar" checked>
+                A través de un amigo.
+                </label><br>
+
+                <label for="buscador">
+                <input type="checkbox" id="buscador" name="notificaciones" value="aceptar">
+                Através de un buscador.
+                </label><br>
+
+                <label for="red">
+                <input type="checkbox" id="red" name="notificaciones" value="aceptar" >
+                Navegando por la red.
+                </label><br>
+
+                <label for="otro">
+                <input type="checkbox" id="otro" name="notificaciones" value="aceptar">
+                Otros.
+                </label>
+            </p>
+
+        <input type = "button" value = "Enviar formulario" onclick=" enviarFormulario()">
+        <input type = "button" value = "Borrar formulario" onclick=" borrarFormulario()">
+
+    </form>
+    <script src="P1ejercicio2.js"></script>
+    </body>
+</html>
