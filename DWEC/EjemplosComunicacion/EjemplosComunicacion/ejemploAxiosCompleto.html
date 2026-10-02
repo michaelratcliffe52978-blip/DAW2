@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD completo con Axios y archivos</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<h2>CRUD con Axios y Subida de Archivos</h2>
+
+<!-- Botones CRUD -->
+<button id="btnGet">GET Post</button>
+<button id="btnPost">POST Post</button>
+<button id="btnPut">PUT Post</button>
+<button id="btnPatch">PATCH Post</button>
+<button id="btnDelete">DELETE Post</button>
+
+<hr>
+
+<h3>Subir archivo</h3>
+<input type="file" id="archivoInput" />
+<button id="btnUpload">Subir archivo</button>
+
+<script>
+  const url = "https://jsonplaceholder.typicode.com/posts/1"; // recurso de ejemplo
+
+  // ====== CRUD con Axios ======
+  const btnGet = document.getElementById("btnGet");
+  const btnPost = document.getElementById("btnPost");
+  const btnPut = document.getElementById("btnPut");
+  const btnPatch = document.getElementById("btnPatch");
+  const btnDelete = document.getElementById("btnDelete");
+
+  // GET
+  btnGet.addEventListener("click", async () => {
+    try {
+      const response = await axios.get(url);
+      console.log("GET exitoso:", response.data);
+      alert("GET realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error GET:", error);
+    }
+  });
+
+  // POST
+  btnPost.addEventListener("click", async () => {
+    try {
+      const nuevoPost = { title: "Post con Axios", body: "Contenido de prueba", userId: 1 };
+      const response = await axios.post("https://jsonplaceholder.typicode.com/posts", nuevoPost);
+      console.log("POST exitoso:", response.data);
+      alert("POST realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error POST:", error);
+    }
+  });
+
+  // PUT
+  btnPut.addEventListener("click", async () => {
+    try {
+      const datosActualizados = { title: "Título actualizado", body: "Contenido actualizado", userId: 1 };
+      const response = await axios.put(url, datosActualizados);
+      console.log("PUT exitoso:", response.data);
+      alert("PUT realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error PUT:", error);
+    }
+  });
+
+  // PATCH
+  btnPatch.addEventListener("click", async () => {
+    try {
+      const cambios = { title: "Título modificado con PATCH" };
+      const response = await axios.patch(url, cambios);
+      console.log("PATCH exitoso:", response.data);
+      alert("PATCH realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error PATCH:", error);
+    }
+  });
+
+  // DELETE
+  btnDelete.addEventListener("click", async () => {
+    try {
+      const response = await axios.delete(url);
+      console.log("DELETE exitoso:", response.status);
+      alert("DELETE realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error DELETE:", error);
+    }
+  });
+
+  // ====== Subida de archivos ======
+  const inputArchivo = document.getElementById("archivoInput");
+  const btnUpload = document.getElementById("btnUpload");
+
+  btnUpload.addEventListener("click", async () => {
+    const archivo = inputArchivo.files[0];
+    if (!archivo) {
+      alert("Selecciona un archivo primero");
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      formData.append("archivo", archivo);
+
+      const response = await axios.post("https://jsonplaceholder.typicode.com/posts", formData, {
+        headers: { "Content-Type": "multipart/form-data" }
+      });
+
+      console.log("Archivo subido con éxito:", response.data);
+      alert("Archivo subido con éxito. Revisa la consola.");
+    } catch (error) {
+      console.error("Error al subir el archivo:", error);
+      alert("Error al subir el archivo ❌");
+    }
+  });
+</script>
+
+</body>
+</html>

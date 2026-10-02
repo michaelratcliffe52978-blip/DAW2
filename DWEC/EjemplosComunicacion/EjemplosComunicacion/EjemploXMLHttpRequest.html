@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>GET y POST con XMLHttpRequest</title>
+</head>
+<body>
+  <script>
+    // GET: leer datos.json 
+    function leerJSON() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          alert("Contenido de datos.json:"+ xhr.responseText);
+
+          // Parseamos el JSON
+          var datos = JSON.parse(xhr.responseText);
+        }
+      };
+
+      xhr.send();
+    }
+
+    // POST: enviar los datos a un endpoint
+    const data = JSON.stringify({
+      title: "Nuevo post de prueba",
+      body: "Este es el contenido del post",
+      userId: 1
+    });
+
+    function enviarPOST() {
+      // Crear la instancia del objeto XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+
+      // Configurar la petición POST al endpoint de posts
+      xhr.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
+
+      // Establecer el encabezado para indicar que el cuerpo es JSON
+      xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+
+      // Definir qué hacer cuando llega la respuesta
+      xhr.onload = function() {
+      if (xhr.status === 201) { // 201 Created
+          const nuevoPost = JSON.parse(xhr.responseText);
+          alert("Post creado exitosamente:" + nuevoPost);
+      } else {
+          alert("Error al crear el post:" + xhr.status + xhr.statusText);
+      }
+    };
+
+    // Enviar la petición con los datos
+    xhr.send(data);
+    }
+
+    // Ejecutamos el flujo: primero GET, luego POST
+    leerJSON();
+    enviarPOST();
+  </script>
+</body>
+</html>

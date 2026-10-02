@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Await/fetch</title>
+</head>
+<body>
+
+
+  <script>
+    async function loadJsonAsync(url) 
+    {
+    try 
+    {
+        const response = await fetch(url); // (1) Espera los metadatos HTTP
+
+        // 2. Verificación manual del estado (CRÍTICO)
+        if (!response.ok) 
+        { 
+            // response.ok es true para códigos 200-299
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const result = await response.json(); // (3) Espera el parseo del cuerpo de datos
+        return result;
+
+    } 
+    catch (error) 
+    {
+        // Captura errores de red (1), errores lanzados manualmente (2), 
+        // o errores de parseo JSON (3)
+        console.error("Error capturado:", error.message);
+        throw error;
+    }
+    }
+
+// Uso
+loadJsonAsync('https://javascript.info/no-such-user.json')
+ .catch(alert("Error")); // Error: 404
+
+  </script>
+  
+
+</body>
+</html>

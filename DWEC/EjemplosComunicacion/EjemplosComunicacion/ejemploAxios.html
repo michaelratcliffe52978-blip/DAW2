@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD con Axios y async/await</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<h2>CRUD con Axios</h2>
+<button id="btnGet">GET Post</button>
+<button id="btnPost">POST Post</button>
+<button id="btnPut">PUT Post</button>
+<button id="btnDelete">DELETE Post</button>
+
+<script>
+  const btnGet = document.getElementById("btnGet");
+  const btnPost = document.getElementById("btnPost");
+  const btnPut = document.getElementById("btnPut");
+  const btnDelete = document.getElementById("btnDelete");
+
+  const url = "https://jsonplaceholder.typicode.com/posts/1";
+
+  // ==========================
+  // GET - obtener datos
+  // ==========================
+  btnGet.addEventListener("click", async () => {
+    try {
+      const response = await axios.get(url);
+      console.log("GET exitoso:", response.data);
+      alert("GET realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error GET:", error);
+    }
+  });
+
+  // ==========================
+  // POST - crear nuevo recurso
+  // ==========================
+  btnPost.addEventListener("click", async () => {
+    try {
+      const nuevoPost = {
+        title: "Post con Axios",
+        body: "Contenido de prueba",
+        userId: 1
+      };
+      const response = await axios.post("https://jsonplaceholder.typicode.com/posts", nuevoPost);
+      console.log("POST exitoso:", response.data);
+      alert("POST realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error POST:", error);
+    }
+  });
+
+  // ==========================
+  // PUT - reemplazar recurso
+  // ==========================
+  btnPut.addEventListener("click", async () => {
+    try {
+      const datosActualizados = {
+        title: "Título actualizado",
+        body: "Contenido actualizado",
+        userId: 1
+      };
+      const response = await axios.put(url, datosActualizados);
+      console.log("PUT exitoso:", response.data);
+      alert("PUT realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error PUT:", error);
+    }
+  });
+
+
+  // ==========================
+  // DELETE - eliminar recurso
+  // ==========================
+  btnDelete.addEventListener("click", async () => {
+    try {
+      const response = await axios.delete(url);
+      console.log("DELETE exitoso:", response.status);
+      alert("DELETE realizado. Revisa la consola.");
+    } catch (error) {
+      console.error("Error DELETE:", error);
+    }
+  });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Enviar archivo con fetch</title>
+</head>
+<body>
+
+  <h2>Subir archivo</h2>
+  <input type="file" id="archivoInput" />
+  <button id="enviarBtn">Enviar</button>
+
+  <script>
+    const inputArchivo = document.getElementById("archivoInput");
+    const botonEnviar = document.getElementById("enviarBtn");
+  
+    botonEnviar.addEventListener("click", () => {
+      const archivo = document.getElementById("archivoInput").value;
+      if (!archivo) 
+      {
+        alert("Selecciona un archivo primero");
+      } else {
+        // Creamos FormData y agregamos el archivo
+        const formData = new FormData();
+        formData.append("archivo", archivo);
+  
+        // Enviamos al servidor
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "POST",
+          body: formData // No necesitamos Content-Type, fetch lo gestiona
+        })
+          .then(response => {
+            if (!response.ok) throw new Error("Error en la subida: " + response.status);
+            return response.json();
+          })
+          .then(data => {
+            console.log("Archivo enviado con éxito:", data);
+          })
+          .catch(error => {
+            console.error("Error:", error);
+          });
+      }
+    });
+  </script>
+  
+
+</body>
+</html>
