@@ -3,8 +3,9 @@
 
 
     if(isset($_POST["añadir"])) {
-    
-        echo $_SESSION["usuario"];
+        $_SESSION["usuario"];
+        
+        echo 
     }
 
     
@@ -13,5 +14,6 @@
         session_unset();        // Eliminar todos los valores de la sesión (se pueden seguir almacenando valores)
 
     }
-    require "ejercicio4.view.php";
+    
+    require "ejercicio4v2.view.php";
 ?>

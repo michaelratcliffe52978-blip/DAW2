@@ -9,6 +9,7 @@
 
     <form action="ejercicio4.php" method="POST">
         <ul>
+            if(count($personas))
             <li for="lista"> <?= $resultado ?? "LISTA VACÍA" ?></li>
         </ul>
         <p>
