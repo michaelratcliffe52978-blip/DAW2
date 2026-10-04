@@ -8,11 +8,11 @@ main{
     display: grid;    
     grid-template-columns: 100%;
     grid-template-rows: 2fr 1fr 4fr 2fr 4fr;    
-    grid-template-areas: 
+    grid-template-areas:
         "hea"
         "nav"
-        "."
-        "."
+        "sec"
+        "asi"
         "foo";
 
     color: white;
@@ -31,42 +31,43 @@ nav {
 }
 section {
     background-color: indigo;
+    grid-area: sec;
 }
 aside {
     background-color: darkmagenta;
+    grid-area: asi;
 }
 footer {
     background-color: darkorchid;
     grid-area: foo;
 }
 
-@media (min-width:600px){
+/* MENOR DE 1000px */
+@media (min-width: 600px) {
     main{        
         grid-template-columns: 30% 70%;
         grid-template-rows: 1.5fr 1fr 3fr 1fr;    
         grid-template-areas: 
         "hea hea"
         "nav nav"
-        ". ."
-        "foo";
+        "asi sec"
+        "foo foo";
     }
-    section{
-        order: -1;
-    }
+   
 }
 
-@media (min-width:1000px){
+
+/* MAYOR O IGUAL A 1000px */
+@media (min-width: 1000px) {
   main{
         grid-template-columns: 20% 60% 20%;
         grid-template-rows: 3fr 5fr 1fr;    
         grid-template-areas: 
-        "hea hea"
-        "nav nav"
-        ". ."
-        "foo";
-        
+            "hea hea hea"
+            "nav sec asi"
+            "foo foo foo";        
         margin: 0 auto; /*centrarlo horizontalmente*/
         max-width: 1000px; /*para los bordes blancos laterales*/
-
     }
 }
+

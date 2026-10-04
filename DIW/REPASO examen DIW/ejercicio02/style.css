@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 80px auto 80px;
+}
+
+header {
+    grid-row: 1;
+    grid-column: 1/4;
+}
+
+header, footer {
+    background-color: #2c3e50;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+aside {
+    background-color: #f4f4f4;
+    padding: 1em;
+
+    grid-column: 1;
+    grid-row: 2;
+}
+
+aside ul {
+    list-style: none;
+}
+
+/* Los hijos pares de la lista del aside */
+aside li:nth-child(even) {
+    color: #3498db;
+}
+
+/* Los li impares dentro del aside */
+aside li:nth-child(odd) {
+    color: #e74c3c;
+}
+
+/* Todos los elementos dentro del aside que no son li */
+aside :not(li) {
+    font-size: 1.2rem;
+}
+
+table {
+    border-collapse: collapse;
+
+    grid-row: 2;
+    grid-column: 2;
+
+    align-self: center;
+    justify-self: center;
+}
+
+table caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+table th,
+table td {
+    border: 1px solid black;
+    text-align: left;
+    padding: .2em;
+}
+
+/* antes del primer th del primer hijo del tbody */
+tbody tr:first-child th::before {
+    content: "➤";
+}
+
+/* antes del th del segundo hijo del tbody */
+tbody tr:nth-child(2) th::before {
+    content: "→";
+}
+
+/* antes del th del tercer hijo del tbody */
+tbody tr:nth-child(3) th::before {
+    content: "⇒";
+}
+
+/* antes del th del último hijo del tbody */
+tbody tr:last-child th::before {
+    content: "✔";
+}
+
+form {
+    padding: 1em;
+
+    grid-row: 2;
+    grid-column: 3;
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+
+}
+
+/* La fila de Color */
+form > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Los div que contienen cada radio */
+form > div > div {
+    display: flex;
+    align-items: center;
+}
+
+form select {
+    padding: .5em 0;
+    width: 100%;
+}
+
+/* el tercer hijo de tipo label del formulario */
+form label:nth-of-type(2) {
+    background-color: #f1c40f;
+    padding: .5em 0;
+}
+
+/* Los inputs de tipo texto, email y los textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+    border: 1px solid #ccc;
+}
+
+/* Los inputs de tipo número */
+input[type="number"] {
+    background-color: #ecf0f1;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* Los inputs de tipo radio */
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* El input de tipo submit */
+input[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.5em 2em;
+    border: none;
+    border-radius: 2em;
+    width: 100%;
+}
+
+/* El label que acompaña al input de tipo radio seleccionado */
+input[type="radio"]:checked + label {
+    color: #2980b9;
+}
+
+/* Los label que están al lado de controles de formulario deshabilitados */
+input:disabled + label {
+    color: red;
+}
+
+/* El input de tipo submit al pasar el ratón por encima */
+input[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+footer {
+    grid-column: 1/4;
+    grid-row: 3;
+}
+
+footer p {
+    font-size: 0.8rem;
+}

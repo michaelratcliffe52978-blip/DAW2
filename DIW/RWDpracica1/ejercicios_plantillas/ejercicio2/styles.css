@@ -3,19 +3,23 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-} 
+}
+
 .principal{
     min-height: 100vh;
     display: flex;
     flex-direction:column;
 }
-
+/*El contenido de todos los elementos hijos del contenedor debe estar centrado tanto
+en lo horizontal como en lo vertical. Tambien deben tener un relleno de 10px.*/
 .principal > *{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
+    
 }
+
 .cabecera {
     background-color: aquamarine;
     grid-area: cabecera;
@@ -24,20 +28,31 @@
 .izquierda {
     background-color: beige;
     grid-area: izquierda;
-
 }
 .contenido {
     background-color: aliceblue;
-    grid-area: contenido;
     flex-direction:column;
     gap: 1.5rem;
+    grid-area: contenido;
 }
 .contenido__img{
     width:100%;
     height: auto;
 }
-/*
-.anexo{}*/
+
+.anexo1 {
+    grid-area: anexo1;
+    background-color:  #C9A547;
+}
+.anexo2 {
+    grid-area: anexo2;
+    background-color: #49888A;
+}
+.derecha {
+    grid-area: derecha;
+    background-color:#F7E5C7;
+}
+
 .pie{
     background-color: black;
     color:white;
@@ -50,25 +65,26 @@
         grid-template-columns: 1fr 2fr 2fr;
         grid-template-rows: 2fr auto 4fr 1fr;    
         grid-template-areas: 
-        "cabecera cabecera cabecera"
-        "izquierda contenido contenido"
-        "derecha . ."
-        "pie pie pie";
+            "cabecera cabecera cabecera"
+            "izquierda contenido contenido"
+            "derecha anexo1 anexo2"
+            "pie pie pie";
     }
 }
 
-@media (min-width:1001px){
-  .principal{
-        grid-template-columns: 20% 60% 20%;
-        grid-template-rows: 3fr 5fr 1fr;    
-        grid-template-areas: 
-        "hea hea"
-        "nav nav"
-        ". ."
-        "foo";
-        
-        margin: 0 auto; /*centrarlo horizontalmente*/
-        max-width: 1000px; /*para los bordes blancos laterales*/
+@media (min-width: 1001px) {
+    .principal {
+        grid-template-columns: 20% 30% 30% 20%;
+        grid-template-rows: 1fr 5fr 2fr 1fr;
 
+        grid-template-areas:
+            "cabecera cabecera cabecera cabecera"
+            "izquierda contenido contenido derecha"
+            "izquierda anexo1 anexo2 derecha"
+            "pie pie pie pie";
+
+        margin: 0 auto;
+        max-width: 1000px;
     }
+  
 }

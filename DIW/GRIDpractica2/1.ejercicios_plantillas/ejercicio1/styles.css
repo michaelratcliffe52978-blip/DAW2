@@ -1,10 +1,24 @@
+*{
+    /*COSAS OBLIGATORIAS PARA LOS DISTINTOS NAVEGADORES*/
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+}
+
 main{
     display: grid;
-    width: 45%;
-    height: 80%;
+    width: 150vh;
+    height: 90vh;
+    margin: 0 auto;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 30%);
-
+    gap: 2.5rem;
+    padding: 2rem;
+} 
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
 }
 .item-a{
     grid-row: 1/3;
@@ -21,8 +35,4 @@ main{
 .item-d{
     grid-row: 3;
     grid-column: 3/5;
-}
-img{
-    width: 100%;
-    height: 100%;
 }

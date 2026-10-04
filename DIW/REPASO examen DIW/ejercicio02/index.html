@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pedido de Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Tienda Online</h1>
+    </header>
+    
+    <aside>
+        <h1>Categorías</h1>
+        <ul>
+            <li><a href="#">Tecnología</a></li>
+            <li><a href="#">Ropa</a></li>
+            <li>Manualidades</li>
+            <li><a href="#">Electrodomésticos</a></li>
+            <li><a href="#">Muebles</a></li>
+            <li>Accesorios</li>
+        </ul>
+    </aside>
+
+    <table>
+        <caption>Productos favoritos</caption>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Color</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Camiseta algodón verde</th>
+                <td>2049</td>
+                <td>Rojo</td>
+                <td>20.99€</td>
+            </tr>
+            <tr>
+                <th>Iphone 15Pro</th>
+                <td>1</td>
+                <td>Azul</td>
+                <td>938€</td>
+            </tr>
+            <tr>
+                <th>Papel arroz alicia</th>
+                <td>1229</td>
+                <td>Rojo</td>
+                <td>3.9€</td>
+            </tr>
+            <tr>
+                <th>Mesa JokkMokk</th>
+                <td>879</td>
+                <td>Madera</td>
+                <td>298€</td>
+            </tr>
+        </tbody>
+    </table>
+    
+     <form>
+        <label for="producto">Compra uno de los productos favoritos:</label>
+        <select id="producto" name="producto">
+            <option value="camiseta">Camiseta algodón verde</option>
+            <option value="smartphone">Iphone 15Pro</option>
+            <option value="papelArroz">Papel arroz alicia</option>
+            <option value="mesa">Mesa JokkMokk</option>
+        </select>
+        
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" max="10" required>
+        
+        <div>
+            <label>Color:</label>
+            <div><input type="radio" id="rojo" name="color" value="rojo"><label for="rojo">Rojo</label></div>
+            <div><input type="radio" id="azul" name="color" value="azul"><label for="azul">Azul</label></div>
+            <div><input type="radio" id="madera" name="color" value="madera"><label for="madera">Madera</label></div>
+            <div><input type="radio" id="negro" name="color" value="negro" disabled><label for="negro">Negro</label></div>
+        </div>
+        
+        <input type="submit">Realizar Pedido</button>
+    </form>
+    
+    <footer>
+        <p>© 2024 Mi Tienda Online. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
