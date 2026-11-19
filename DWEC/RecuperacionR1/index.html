@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reservas - Gimnasio</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:24px;background:#f7f8fb;color:#111}
+    h1{font-size:1.4rem}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:760px;background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+    label{display:flex;flex-direction:column;font-size:.9rem}
+    .full{grid-column:1/-1}
+    button{padding:8px 12px;border-radius:6px;border:1px solid #d0d7e0;background:#0b66ff;color:#fff;cursor:pointer}
+    button.secondary{background:#6b7280;border-color:#6b7280}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:8px;border-bottom:1px solid #e6e9ef;text-align:left}
+    .msg{margin-top:12px;padding:10px;border-radius:6px}
+    .success{background:#ecfdf5;color:#065f46;border:1px solid #bbf7d0}
+    .error{background:#fff1f2;color:#9f1239;border:1px solid #fecaca}
+    .warning{background:#fff7ed;color:#92400e;border:1px solid #ffedd5}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .small{font-size:.85rem;padding:6px 8px}
+  </style>
+</head>
+<body>
+  <h1>Reservas del gimnasio</h1>
+  <p>Formulario para añadir y gestionar reservas. Los datos se guardan en <code>localStorage</code> y pueden enviarse (simulado) al servidor.</p>
+
+  <form id="reservationForm" novalidate>
+    <label>
+      Nombre completo
+      <input type="text" name="name" id="name" placeholder="Ej: Ana Pérez" required />
+    </label>
+
+    <label>
+      Correo electrónico
+      <input type="email" name="email" id="email" placeholder="ejemplo@correo.com" required />
+    </label>
+
+    <label>
+      Actividad
+      <select name="activity" id="activity" required>
+        <option value="">-- Selecciona --</option>
+        <option value="Yoga">Yoga</option>
+        <option value="Spinning">Spinning</option>
+        <option value="Musculacion">Musculación</option>
+        <option value="Natacion">Natación</option>
+      </select>
+    </label>
+
+    <label>
+      Fecha de la clase
+      <input type="date" name="date" id="date" required />
+    </label>
+
+    <label class="full">
+      <input type="checkbox" name="notify" id="notify" /> Deseo recibir notificaciones por email
+    </label>
+
+    <div class="full actions">
+      <button type="submit" id="addBtn">Añadir reserva</button>
+      <button type="button" id="clearBtn" class="secondary small">Borrar todas</button>
+      <button type="button" id="saveLocalBtn" class="secondary small">Guardar en local</button>
+      <button type="button" id="sendBtn" class="small">Enviar al servidor</button>
+    </div>
+  </form>
+
+  <div id="messages"></div>
+
+  <section id="listSection">
+    <h2>Reservas</h2>
+    <table id="reservationsTable" aria-live="polite">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Actividad</th>
+          <th>Fecha</th>
+          <th>Notif.</th>
+          <!--<th>Acciones</th>-->
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
